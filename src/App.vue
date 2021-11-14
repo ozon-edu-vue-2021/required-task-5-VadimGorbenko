@@ -7,9 +7,6 @@
 
 export default {
   name: "App",
-  components: {
-    Form,
-  },
 };
 </script>
 
