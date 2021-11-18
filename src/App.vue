@@ -1,15 +1,12 @@
 <template>
   <div id="app">
+    <router-view />
   </div>
 </template>
 
 <script>
-
 export default {
   name: "App",
-  components: {
-    Form,
-  },
 };
 </script>
 
@@ -20,12 +17,6 @@ export default {
   background-color: #fafafa;
   padding: 24px;
   box-sizing: border-box;
-}
-
-html,
-body,
-#app {
-  height: 100%;
 }
 
 * {
