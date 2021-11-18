@@ -17,6 +17,9 @@
           <strong>{{ totalCost }}</strong
           >&nbsp;рублей.
         </output>
+        <o-button class="cart__make-order" @click="onMakeOrderClick">
+          Оформить
+        </o-button>
       </div>
     </div>
   </div>
@@ -29,7 +32,9 @@ export default {
   name: "Cart",
   components: {
     CartProductCard: () => import("@/components/CartProductCard"),
+    OButton: () => import("@/components/OButton"),
   },
+
   computed: {
     ...mapGetters({
       cartItems: "cart/cartItems",
@@ -37,6 +42,15 @@ export default {
       totalProducts: "cart/totalProducts",
       totalPositions: "cart/totalPositions",
     }),
+  },
+  methods: {
+    onMakeOrderClick() {
+      alert(
+        this.cartItems
+          .map((i) => `${i.product.dish} - ${i.quantity}шт`)
+          .join("\n")
+      );
+    },
   },
 };
 </script>
